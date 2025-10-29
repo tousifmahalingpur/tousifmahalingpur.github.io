@@ -13,7 +13,7 @@ body {
   color: #222;
   line-height: 1.6;
   scroll-behavior: smooth;
-  padding-top: 80px; /* space for sticky navbar */
+  padding-top: 100px; /* space for sticky navbar */
 }
 
 /* Containers */
@@ -233,3 +233,7 @@ ul li:hover {
   opacity: 1;
   transform: translateY(0);
 }
+section {
+  scroll-margin-top: 100px;
+}
+
