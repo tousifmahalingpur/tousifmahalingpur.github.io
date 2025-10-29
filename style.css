@@ -1,0 +1,235 @@
+/* 🌈 ===== Global Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  padding-top: 80px; /* space for sticky navbar */
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 🌐 ===== Navbar (Sticky Glass Effect) ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #1e90ff;
+  letter-spacing: 1px;
+  transition: transform 0.3s;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #1e90ff;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+nav a:hover {
+  color: #1e90ff;
+}
+
+/* 💫 ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.lead {
+  font-size: 1.1em;
+  color: #444;
+  margin: 15px 0 25px;
+}
+
+/* 🪄 ===== Cards ===== */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.9s ease both;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 🌟 ===== Buttons ===== */
+.btn {
+  background: #1e90ff;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 0 8px;
+  display: inline-block;
+  transition: background 0.3s, transform 0.3s;
+}
+.btn:hover {
+  background: #4682b4;
+  transform: scale(1.05);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #1e90ff;
+  border: 2px solid #1e90ff;
+}
+.btn.ghost:hover {
+  background: #1e90ff;
+  color: white;
+}
+
+/* 🧩 ===== Profile Photo ===== */
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.2s ease;
+}
+
+/* 🧠 ===== Skills List ===== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+ul li {
+  background: rgba(30, 144, 255, 0.1);
+  color: #333;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+ul li:hover {
+  background: #1e90ff;
+  color: white;
+  transform: scale(1.03);
+}
+
+/* 🔗 ===== Social Links ===== */
+.social a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.social a:hover {
+  text-decoration: underline;
+}
+
+/* ⚙️ ===== Footer ===== */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  margin-top: 40px;
+  color: #333;
+  font-size: 0.9em;
+  animation: fadeIn 1s ease;
+}
+
+/* 🪄 ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px 8px;
+  }
+
+  .grid-3 {
+    display: block;
+  }
+
+  .card {
+    margin: 15px 0;
+  }
+
+  .btn {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+/* 🎬 Scroll Reveal Animation */
+.card, .hero, .section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.card.visible, .hero.visible, .section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
